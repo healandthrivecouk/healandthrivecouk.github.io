@@ -1,0 +1,215 @@
+/* Heal & Thrive - Custom styles beyond Tailwind */
+
+/* Selima font */
+@font-face {
+  font-family: 'Selima';
+  src: url('fonts/Selima.woff2') format('woff2'),
+       url('fonts/Selima.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Golden glow page titles */
+.page-title-glow {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #143A1B;
+  -webkit-text-stroke: 1.5px white;
+  paint-order: stroke fill;
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 1),
+    0 0 10px rgba(255, 250, 200, 0.9),
+    0 0 20px rgba(255, 240, 150, 0.75),
+    0 0 35px rgba(245, 220, 100, 0.6),
+    0 0 55px rgba(235, 200, 70, 0.45),
+    0 0 85px rgba(220, 185, 50, 0.3),
+    0 0 120px rgba(210, 170, 40, 0.15);
+}
+@media (min-width: 640px) {
+  .page-title-glow {
+    font-size: 5.5rem;
+  }
+}
+
+/* Hero subtitle text outline for legibility */
+.hero-subtitle {
+  text-shadow:
+    -1px -1px 0 rgba(100, 100, 100, 0.5),
+     1px -1px 0 rgba(100, 100, 100, 0.5),
+    -1px  1px 0 rgba(100, 100, 100, 0.5),
+     1px  1px 0 rgba(100, 100, 100, 0.5);
+}
+
+/* Hero background sizing */
+.hero-bg {
+  background-size: cover;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Textured green sections */
+.green-textured {
+  position: relative;
+}
+.green-textured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: url("../images/seamless3.jpg");
+  background-repeat: repeat;
+  background-size: 300px;
+  pointer-events: none;
+  z-index: 0;
+}
+.green-textured > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Skip to content link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: #2F773E;
+  color: #fff;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus ring for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid #2F773E;
+  outline-offset: 2px;
+}
+
+/* Mobile nav overlay */
+.mobile-nav {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background: #FDFCF9; /* hardcoded cream-50, not dependent on Tailwind CDN */
+}
+.mobile-nav.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Prevent body scroll when mobile nav is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+/* Hero text shadow for legibility */
+.hero-text-shadow {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Service card hover */
+.service-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Subtle fade-in for sections */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .service-card:hover {
+    transform: none;
+  }
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Testimonial carousel */
+.testimonial-slide.active {
+  animation: testimonialFade 0.5s ease;
+}
+@keyframes testimonialFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.testimonial-dot.active {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-slide {
+    animation: none;
+  }
+}
+
+/* Gold accent underline (matches brand signage) */
+.gold-accent {
+  display: block;
+  text-align: center;
+  position: relative;
+}
+@media (min-width: 640px) {
+  .gold-accent {
+    display: inline-block;
+    text-align: inherit;
+  }
+}
+.gold-accent::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #B5A064;
+  margin: 0.5rem auto 0;
+}
+
+/* Protect nav buttons from Cal.com embed CSS overrides */
+nav a[href="book.html"],
+.mobile-nav a[href="book.html"] {
+  color: #fff !important;
+  background-color: #5A8060 !important;
+}
+nav a[href="book.html"]:hover,
+.mobile-nav a[href="book.html"]:hover {
+  background-color: #3D6B44 !important;
+}
+
+/* Booking embed responsive container */
+.calendly-container {
+  min-height: 700px;
+}
+@media (max-width: 640px) {
+  .calendly-container {
+    min-height: 600px;
+  }
+}
