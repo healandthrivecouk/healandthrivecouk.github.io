@@ -60,7 +60,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.15;
+  opacity: 0.06;
   background-image: url("../images/seamless3.jpg");
   background-repeat: repeat;
   background-size: 300px;
