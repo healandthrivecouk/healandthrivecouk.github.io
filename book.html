@@ -96,95 +96,172 @@
       </div>
     </section>
 
-    <!-- Service Cards -->
+    <!-- Booking Selector -->
     <section class="py-12 sm:py-16 bg-cream-50" aria-label="Book a service">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-sage-100 fade-in">
 
-          <!-- Reflexology -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm border border-sage-100 flex flex-col fade-in">
-            <h3 class="text-xl font-semibold text-sage-800 mb-2">Reflexology</h3>
-            <p class="text-gray-600 leading-relaxed mb-4 flex-grow">Targeted pressure-point therapy to promote healing and deep relaxation.</p>
-            <div class="flex items-end justify-between">
-              <div class="flex gap-2">
-                <button data-cal-link="healandthrive/reflexology" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-4 py-2.5 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                  45 min / &pound;45
-                </button>
-                <button data-cal-link="healandthrive/reflexology-60" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-4 py-2.5 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                  60 min / &pound;50
-                </button>
-              </div>
-            </div>
+          <!-- Step 1: Treatment -->
+          <div class="mb-6">
+            <label for="treatment-select" class="block text-sm font-semibold text-sage-800 mb-2">Choose a Treatment</label>
+            <select id="treatment-select" class="w-full rounded-lg border border-sage-200 bg-cream-50 px-4 py-3 text-gray-700 focus:border-sage-500 focus:ring-2 focus:ring-sage-300 focus:outline-none transition-colors">
+              <option value="" disabled selected>Select a treatment&hellip;</option>
+              <option value="reflexology">Reflexology</option>
+              <option value="full-body-massage">Full Body Massage</option>
+              <option value="half-body-massage">Half Body Massage</option>
+              <option value="head-neck-shoulders">Head, Neck &amp; Shoulders</option>
+              <option value="reflexology-acupuncture">Reflexology &amp; Acupuncture</option>
+            </select>
           </div>
 
-          <!-- Full Body Massage -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm border border-sage-100 flex flex-col fade-in">
-            <h3 class="text-xl font-semibold text-sage-800 mb-2">Full Body Massage</h3>
-            <p class="text-gray-600 leading-relaxed mb-4 flex-grow">Therapeutic massage to ease tension, reduce stress, and support your body's natural recovery.</p>
-            <div class="flex items-end justify-between">
-              <div class="flex gap-2">
-                <button data-cal-link="healandthrive/full-body-massage" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-4 py-2.5 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                  45 min / &pound;45
-                </button>
-                <button data-cal-link="healandthrive/full-body-massage-60" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-4 py-2.5 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                  60 min / &pound;50
-                </button>
-              </div>
-            </div>
+          <!-- Step 2: Duration -->
+          <div class="mb-6">
+            <label for="duration-select" class="block text-sm font-semibold text-sage-800 mb-2">Select Duration</label>
+            <select id="duration-select" disabled class="w-full rounded-lg border border-sage-200 bg-gray-100 px-4 py-3 text-gray-400 focus:border-sage-500 focus:ring-2 focus:ring-sage-300 focus:outline-none transition-colors">
+              <option value="" disabled selected>Choose a treatment first&hellip;</option>
+            </select>
           </div>
 
-          <!-- Half Body Massage -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm border border-sage-100 flex flex-col fade-in">
-            <h3 class="text-xl font-semibold text-sage-800 mb-2">Half Body Massage</h3>
-            <p class="text-gray-600 leading-relaxed mb-4 flex-grow">A focused massage targeting either the upper or lower body for targeted relief.</p>
-            <div class="flex items-end justify-between">
-              <div class="flex gap-2">
-                <button data-cal-link="healandthrive/half-body-massage" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-4 py-2.5 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                  45 min / &pound;45
-                </button>
-                <button data-cal-link="healandthrive/half-body-massage-60-mins" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-4 py-2.5 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                  60 min / &pound;50
-                </button>
-              </div>
-            </div>
+          <!-- Step 3: Payment -->
+          <div class="mb-8">
+            <label for="payment-select" class="block text-sm font-semibold text-sage-800 mb-2">Payment Method</label>
+            <select id="payment-select" disabled class="w-full rounded-lg border border-sage-200 bg-gray-100 px-4 py-3 text-gray-400 focus:border-sage-500 focus:ring-2 focus:ring-sage-300 focus:outline-none transition-colors">
+              <option value="" disabled selected>Select duration first&hellip;</option>
+            </select>
           </div>
 
-          <!-- Head, Neck & Shoulders -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm border border-sage-100 flex flex-col fade-in">
-            <h3 class="text-xl font-semibold text-sage-800 mb-2">Head, Neck &amp; Shoulders</h3>
-            <p class="text-gray-600 leading-relaxed mb-4 flex-grow">Dedicated treatment focusing on the areas where we carry the most tension.</p>
-            <div class="flex items-end justify-between">
-              <div class="flex gap-2">
-                <button data-cal-link="healandthrive/head-neck-shoulders" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-4 py-2.5 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                  45 min / &pound;45
-                </button>
-                <button data-cal-link="healandthrive/head-neck-shoulders-60-mins" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-4 py-2.5 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                  60 min / &pound;50
-                </button>
-              </div>
-            </div>
+          <!-- Price summary -->
+          <div id="price-summary" class="hidden mb-6 text-center">
+            <p class="text-2xl font-bold text-sage-600" id="price-display"></p>
           </div>
 
-          <!-- Special Offer -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm border-2 border-sage-400 flex flex-col fade-in relative">
-            <span class="absolute -top-3 left-6 bg-sage-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Special Offer</span>
-            <h3 class="text-xl font-semibold text-sage-800 mb-2">Reflexology &amp; Acupuncture</h3>
-            <p class="text-gray-600 leading-relaxed mb-4 flex-grow">The best of both therapies in one combined session for deeper healing and relaxation.</p>
-            <div class="flex items-end justify-between">
-              <div>
-                <p class="text-2xl font-bold text-sage-600">&pound;70</p>
-                <p class="text-gray-500 text-sm">60 min combined</p>
-              </div>
-              <button data-cal-link="healandthrive/reflexology-acupuncture" data-cal-config='{"layout":"month_view","theme":"light","locale":"en","hour12":true}' class="inline-flex items-center px-6 py-3 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2">
-                Book
-              </button>
-            </div>
-          </div>
+          <!-- Book button -->
+          <button id="book-btn" disabled class="w-full py-3.5 bg-sage-300 text-white font-semibold rounded-lg cursor-not-allowed transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2 text-lg">
+            Book Appointment
+          </button>
 
         </div>
         <p class="text-center text-gray-500 text-sm mt-8">Need help booking? <a href="contact.html" class="text-sage-600 hover:text-sage-700 underline">Contact us</a> and we'll be happy to assist.</p>
       </div>
     </section>
+
+    <script>
+    (function() {
+      // Cal.com link map: treatments[treatmentKey][durationKey][paymentKey]
+      var treatments = {
+        "reflexology": {
+          "45": { label: "45 min -£45", price: "£45", online: "healandthrive/reflexology-online", store: "healandthrive/reflexology" },
+          "60": { label: "60 min -£50", price: "£50", online: "healandthrive/reflexology-60-online", store: "healandthrive/reflexology-60" }
+        },
+        "full-body-massage": {
+          "45": { label: "45 min -£45", price: "£45", online: "healandthrive/full-body-massage-online", store: "healandthrive/full-body-massage" },
+          "60": { label: "60 min -£50", price: "£50", online: "healandthrive/full-body-massage-60-online", store: "healandthrive/full-body-massage-60" }
+        },
+        "half-body-massage": {
+          "45": { label: "45 min -£45", price: "£45", online: "healandthrive/half-body-massage-online", store: "healandthrive/half-body-massage" },
+          "60": { label: "60 min -£50", price: "£50", online: "healandthrive/half-body-massage-60-mins-online", store: "healandthrive/half-body-massage-60-mins" }
+        },
+        "head-neck-shoulders": {
+          "45": { label: "45 min -£45", price: "£45", online: "healandthrive/head-neck-shoulders-online", store: "healandthrive/head-neck-shoulders" },
+          "60": { label: "60 min -£50", price: "£50", online: "healandthrive/head-neck-shoulders-60-mins-online", store: "healandthrive/head-neck-shoulders-60-mins" }
+        },
+        "reflexology-acupuncture": {
+          "60": { label: "60 min -£70", price: "£70", online: "healandthrive/reflexology-acupuncture-online", store: "healandthrive/reflexology-acupuncture" }
+        }
+      };
+
+      var treatmentEl = document.getElementById("treatment-select");
+      var durationEl  = document.getElementById("duration-select");
+      var paymentEl   = document.getElementById("payment-select");
+      var bookBtn     = document.getElementById("book-btn");
+      var priceSummary = document.getElementById("price-summary");
+      var priceDisplay = document.getElementById("price-display");
+      var calConfig = '{"layout":"month_view","theme":"light","locale":"en","hour12":true}';
+
+      function enableSelect(el, placeholder) {
+        el.disabled = false;
+        el.className = el.className.replace("bg-gray-100", "bg-cream-50").replace("text-gray-400", "text-gray-700");
+        el.innerHTML = '<option value="" disabled selected>' + placeholder + '</option>';
+      }
+
+      function disableSelect(el, placeholder) {
+        el.disabled = true;
+        el.className = el.className.replace("bg-cream-50", "bg-gray-100").replace("text-gray-700", "text-gray-400");
+        el.innerHTML = '<option value="" disabled selected>' + placeholder + '</option>';
+      }
+
+      function updateBookBtn() {
+        var ready = treatmentEl.value && durationEl.value && paymentEl.value;
+        if (ready) {
+          bookBtn.disabled = false;
+          bookBtn.className = "w-full py-3.5 bg-sage-500 hover:bg-sage-600 text-white font-semibold rounded-lg cursor-pointer transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2 text-lg";
+          var t = treatments[treatmentEl.value][durationEl.value];
+          var link = paymentEl.value === "online" ? t.online : t.store;
+          bookBtn.setAttribute("data-cal-link", link);
+          bookBtn.setAttribute("data-cal-config", '{"layout":"month_view","theme":"light","locale":"en","hour12":true}');
+          priceDisplay.textContent = t.price;
+          priceSummary.classList.remove("hidden");
+        } else {
+          bookBtn.disabled = true;
+          bookBtn.removeAttribute("data-cal-link");
+          bookBtn.removeAttribute("data-cal-config");
+          bookBtn.className = "w-full py-3.5 bg-sage-300 text-white font-semibold rounded-lg cursor-not-allowed transition-colors focus:ring-2 focus:ring-sage-300 focus:ring-offset-2 text-lg";
+          priceSummary.classList.add("hidden");
+        }
+      }
+
+      treatmentEl.addEventListener("change", function() {
+        var durations = treatments[this.value];
+        var keys = Object.keys(durations);
+
+        enableSelect(durationEl, "Select duration\u2026");
+        for (var i = 0; i < keys.length; i++) {
+          var opt = document.createElement("option");
+          opt.value = keys[i];
+          opt.textContent = durations[keys[i]].label;
+          durationEl.appendChild(opt);
+        }
+        // If only one duration, auto-select it
+        if (keys.length === 1) {
+          durationEl.value = keys[0];
+          durationEl.dispatchEvent(new Event("change"));
+        } else {
+          disableSelect(paymentEl, "Select duration first\u2026");
+          paymentEl.value = "";
+          updateBookBtn();
+        }
+      });
+
+      durationEl.addEventListener("change", function() {
+        enableSelect(paymentEl, "How would you like to pay?\u2026");
+        var optOnline = document.createElement("option");
+        optOnline.value = "online";
+        optOnline.textContent = "Pay Online (card)";
+        var optStore = document.createElement("option");
+        optStore.value = "store";
+        optStore.textContent = "Pay In Store";
+        paymentEl.appendChild(optOnline);
+        paymentEl.appendChild(optStore);
+        updateBookBtn();
+      });
+
+      paymentEl.addEventListener("change", updateBookBtn);
+
+      bookBtn.addEventListener("click", function() {
+        if (this.disabled) return;
+        var t = treatments[treatmentEl.value][durationEl.value];
+        var link = paymentEl.value === "online" ? t.online : t.store;
+        // Create a temporary element with data-cal-link and click it
+        var tmp = document.createElement("button");
+        tmp.setAttribute("data-cal-link", link);
+        tmp.setAttribute("data-cal-config", '{"layout":"month_view","theme":"light","locale":"en","hour12":true}');
+        tmp.style.display = "none";
+        document.body.appendChild(tmp);
+        // Let Cal.com's embed detect it, then click
+        setTimeout(function() { tmp.click(); document.body.removeChild(tmp); }, 100);
+      });
+    })();
+    </script>
 
     <!-- Cal.com Popup Embed Script -->
     <script type="text/javascript">
