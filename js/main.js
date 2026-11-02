@@ -101,10 +101,10 @@
 
 
   // --- Active nav link highlight ---
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  var currentPage = '/' + window.location.pathname.split('/').pop().replace(/\.html$/, '').replace(/^index$/, '');
   document.querySelectorAll('nav a, #mobile-nav a').forEach(function (link) {
     var href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    if (href === currentPage) {
       link.classList.add('text-sage-700');
       link.setAttribute('aria-current', 'page');
     }
