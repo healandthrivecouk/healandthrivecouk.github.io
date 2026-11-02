@@ -194,13 +194,13 @@ body.nav-open {
 }
 
 /* Protect nav buttons from Cal.com embed CSS overrides */
-nav a[href="book.html"],
-.mobile-nav a[href="book.html"] {
+nav a[href="/book"],
+.mobile-nav a[href="/book"] {
   color: #fff !important;
   background-color: #5A8060 !important;
 }
-nav a[href="book.html"]:hover,
-.mobile-nav a[href="book.html"]:hover {
+nav a[href="/book"]:hover,
+.mobile-nav a[href="/book"]:hover {
   background-color: #3D6B44 !important;
 }
 
